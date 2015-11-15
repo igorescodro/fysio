@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:labelFor="@+id/edt_width"
+        android:text="@string/calculator.label.width"
+        android:textSize="@dimen/font_large"/>
+
+    <EditText
+        android:id="@+id/edt_width"
+        android:layout_width="@dimen/edit_text_small"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_width"
+        android:layout_marginStart="@dimen/margin_small"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/txt_width"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/txt_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_toEndOf="@id/edt_width"
+        android:labelFor="@+id/edt_length"
+        android:text="@string/calculator.label.length"
+        android:textSize="@dimen/font_large"/>
+
+    <EditText
+        android:id="@+id/edt_length"
+        android:layout_width="@dimen/edit_text_small"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_length"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_toEndOf="@id/edt_width"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/txt_width"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/txt_era"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_toEndOf="@id/edt_length"
+        android:labelFor="@+id/edt_era"
+        android:text="@string/calculator.label.era"
+        android:textSize="@dimen/font_large"/>
+
+    <EditText
+        android:id="@+id/edt_era"
+        android:layout_width="@dimen/edit_text_small"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_length"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_toEndOf="@id/edt_length"
+        android:inputType="numberDecimal"
+        android:labelFor="@id/txt_width"
+        android:singleLine="true"/>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_width"
+        android:layout_margin="@dimen/margin_normal"
+        android:text="@string/calculator.button.calculate"/>
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_calculate"
+        android:layout_margin="@dimen/margin_normal"
+        android:text="@string/calculator.button.result"
+        android:textSize="@dimen/font_maximum"/>
+
+
+</RelativeLayout>
