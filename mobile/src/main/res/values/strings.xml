@@ -3,6 +3,7 @@
     <string name="calculator.label.width">Width</string>
     <string name="calculator.label.length">Length</string>
     <string name="calculator.label.era">ERA</string>
+    <string name="calculator.label.time">Time</string>
     <string name="calculator.button.calculate">Calculate</string>
     <string name="calculator.button.result">{0} minutes</string>
 </resources>

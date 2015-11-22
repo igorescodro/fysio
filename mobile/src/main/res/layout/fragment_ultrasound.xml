@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_weight="1"
+            android:background="@color/purple"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/image_width_normal"
+                android:layout_height="@dimen/image_height_normal"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:src="@drawable/ic_width_white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:labelFor="@id/edt_width"
+                android:text="@string/calculator.label.width"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_small"/>
+
+            <EditText
+                android:id="@+id/edt_width"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_tiny"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_weight="1"
+            android:background="@color/blue"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/image_width_normal"
+                android:layout_height="@dimen/image_height_normal"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:src="@drawable/ic_lenght_white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:labelFor="@id/edt_length"
+                android:text="@string/calculator.label.length"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_small"/>
+
+            <EditText
+                android:id="@+id/edt_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_tiny"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/image_width_normal"
+                android:layout_height="@dimen/image_height_normal"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_tiny"
+                android:layout_marginTop="@dimen/margin_tiny"
+                android:src="@drawable/ic_era_white"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:labelFor="@id/edt_length"
+                android:text="@string/calculator.label.era"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_small"/>
+
+            <EditText
+                android:id="@+id/edt_era"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_small"
+                android:gravity="center"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_result"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/layout"
+        android:layout_margin="@dimen/margin_normal"
+        android:background="@color/card"/>
+
+    <ImageView
+        android:id="@+id/img_time"
+        android:layout_width="@dimen/image_height_normal"
+        android:layout_height="@dimen/image_height_normal"
+        android:layout_alignStart="@id/view_result"
+        android:layout_alignTop="@id/view_result"
+        android:layout_marginEnd="@dimen/margin_tiny"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:src="@drawable/ic_time_white"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_time"
+        android:layout_alignEnd="@id/view_result"
+        android:layout_alignTop="@id/img_time"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_toEndOf="@id/img_time"
+        android:gravity="center_vertical"
+        android:text="@string/calculator.label.time"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_small"/>
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/view_result"
+        android:layout_alignEnd="@id/view_result"
+        android:layout_alignStart="@id/view_result"
+        android:layout_below="@id/img_time"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_small"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"/>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_result"
+        android:layout_marginEnd="@dimen/margin_huge"
+        android:layout_marginStart="@dimen/margin_huge"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:background="@color/red"
+        android:text="@string/calculator.button.calculate"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

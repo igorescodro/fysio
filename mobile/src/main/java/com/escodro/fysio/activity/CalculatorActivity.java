@@ -39,7 +39,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculator_main);
+        setContentView(R.layout.fragment_ultrasound);
         mPresenter = new CalculatorPresenterImpl(this);
         initComponents();
     }
