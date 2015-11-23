@@ -31,12 +31,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:labelFor="@id/edt_width"
+                android:labelFor="@+id/edt_width"
                 android:text="@string/calculator.label.width"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_small"/>
 
-            <EditText
+            <com.escodro.fysio.widget.DecimalEditText
                 android:id="@+id/edt_width"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,8 +44,7 @@
                 android:layout_marginBottom="@dimen/margin_small"
                 android:layout_marginEnd="@dimen/margin_small"
                 android:layout_marginStart="@dimen/margin_small"
-                android:gravity="center"
-                android:inputType="numberDecimal"/>
+                android:gravity="center"/>
 
         </LinearLayout>
 
@@ -70,12 +69,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:labelFor="@id/edt_length"
+                android:labelFor="@+id/edt_length"
                 android:text="@string/calculator.label.length"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_small"/>
 
-            <EditText
+            <com.escodro.fysio.widget.DecimalEditText
                 android:id="@+id/edt_length"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,8 +82,7 @@
                 android:layout_marginBottom="@dimen/margin_small"
                 android:layout_marginEnd="@dimen/margin_small"
                 android:layout_marginStart="@dimen/margin_small"
-                android:gravity="center"
-                android:inputType="numberDecimal"/>
+                android:gravity="center"/>
 
         </LinearLayout>
 
@@ -110,12 +108,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:labelFor="@id/edt_length"
+                android:labelFor="@+id/edt_length"
                 android:text="@string/calculator.label.era"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_small"/>
 
-            <EditText
+            <com.escodro.fysio.widget.DecimalEditText
                 android:id="@+id/edt_era"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,8 +121,7 @@
                 android:layout_marginBottom="@dimen/margin_small"
                 android:layout_marginEnd="@dimen/margin_small"
                 android:layout_marginStart="@dimen/margin_small"
-                android:gravity="center"
-                android:inputType="numberDecimal"/>
+                android:gravity="center"/>
 
         </LinearLayout>
 

@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.escodro.fysio.R;
 import com.escodro.fysio.presenter.CalculatorPresenter;
 import com.escodro.fysio.presenter.CalculatorPresenterImpl;
 import com.escodro.fysio.view.CalculatorView;
+import com.escodro.fysio.widget.DecimalEditText;
 
 import java.text.MessageFormat;
 
@@ -22,19 +22,13 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
 
     private CalculatorPresenter mPresenter;
 
-    private EditText mWidthEdit;
+    private DecimalEditText mWidthEdit;
 
-    private EditText mLengthEdit;
+    private DecimalEditText mLengthEdit;
 
-    private EditText mEraEdit;
+    private DecimalEditText mEraEdit;
 
     private TextView mResultText;
-
-    private float mWidth;
-
-    private float mLength;
-
-    private float mEra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +39,9 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     }
 
     private void initComponents() {
-        mWidthEdit = (EditText) findViewById(R.id.edt_width);
-        mLengthEdit = (EditText) findViewById(R.id.edt_length);
-        mEraEdit = (EditText) findViewById(R.id.edt_era);
+        mWidthEdit = (DecimalEditText) findViewById(R.id.edt_width);
+        mLengthEdit = (DecimalEditText) findViewById(R.id.edt_length);
+        mEraEdit = (DecimalEditText) findViewById(R.id.edt_era);
         mResultText = (TextView) findViewById(R.id.txt_result);
 
         final Button calculateButton = (Button) findViewById(R.id.btn_calculate);
@@ -55,17 +49,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     }
 
     private boolean verifyFields() {
-        return !isEmpty(mWidthEdit) && !isEmpty(mLengthEdit) && !isEmpty(mEraEdit);
-    }
-
-    private boolean isEmpty(EditText editText) {
-        return editText.getText().toString().trim().length() == 0;
-    }
-
-    private void updateValues() {
-        mWidth = Float.parseFloat(mWidthEdit.getText().toString());
-        mLength = Float.parseFloat(mLengthEdit.getText().toString());
-        mEra = Float.parseFloat(mEraEdit.getText().toString());
+        return !mWidthEdit.isEmpty() && !mLengthEdit.isEmpty() && !mEraEdit.isEmpty();
     }
 
     @Override
@@ -87,8 +71,8 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         switch (view.getId()) {
             case R.id.btn_calculate:
                 if (verifyFields()) {
-                    updateValues();
-                    mPresenter.onCalculate(mWidth, mLength, mEra);
+                    mPresenter.onCalculate(mWidthEdit.getValue(), mLengthEdit.getValue(),
+                            mEraEdit.getValue());
                 }
                 break;
         }
