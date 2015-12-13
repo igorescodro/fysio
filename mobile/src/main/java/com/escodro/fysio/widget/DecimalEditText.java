@@ -26,7 +26,8 @@ public class DecimalEditText extends EditText {
     }
 
     private void init() {
-        setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        setInputType(InputType.TYPE_CLASS_NUMBER
+                | InputType.TYPE_NUMBER_FLAG_DECIMAL);
     }
 
     public Float getValue() {
