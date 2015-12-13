@@ -1,21 +1,21 @@
 package com.escodro.fysio.presenter;
 
 import com.escodro.fysio.interactor.CalculatorInteractor;
-import com.escodro.fysio.interactor.CalculatorInteractorImpl;
+import com.escodro.fysio.interactor.UltrasoundInteractor;
 import com.escodro.fysio.view.CalculatorView;
 
 /**
  * Created by IgorEscodro on 15/11/15.
  */
-public class CalculatorPresenterImpl implements CalculatorPresenter {
+public class UltrasoundPresenter implements CalculatorPresenter {
 
     private CalculatorView mCalculatorView;
 
     private CalculatorInteractor mInteractor;
 
-    public CalculatorPresenterImpl(CalculatorView view) {
+    public UltrasoundPresenter(CalculatorView view) {
         mCalculatorView = view;
-        mInteractor = new CalculatorInteractorImpl();
+        mInteractor = new UltrasoundInteractor();
     }
 
     @Override

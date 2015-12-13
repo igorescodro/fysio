@@ -2,13 +2,16 @@ package com.escodro.fysio.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 import com.escodro.fysio.R;
 import com.escodro.fysio.presenter.CalculatorPresenter;
-import com.escodro.fysio.presenter.CalculatorPresenterImpl;
+import com.escodro.fysio.presenter.UltrasoundPresenter;
 import com.escodro.fysio.view.CalculatorView;
 import com.escodro.fysio.widget.DecimalEditText;
 
@@ -18,7 +21,7 @@ import java.text.MessageFormat;
  * Created by IgorEscodro on 14/11/15.
  */
 public class CalculatorActivity extends AppCompatActivity implements CalculatorView,
-        View.OnClickListener {
+        View.OnClickListener, OnEditorActionListener {
 
     private CalculatorPresenter mPresenter;
 
@@ -34,7 +37,7 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_ultrasound);
-        mPresenter = new CalculatorPresenterImpl(this);
+        mPresenter = new UltrasoundPresenter(this);
         initComponents();
     }
 
@@ -43,9 +46,15 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         mLengthEdit = (DecimalEditText) findViewById(R.id.edt_length);
         mEraEdit = (DecimalEditText) findViewById(R.id.edt_era);
         mResultText = (TextView) findViewById(R.id.txt_result);
-
         final Button calculateButton = (Button) findViewById(R.id.btn_calculate);
+
+        mEraEdit.setOnEditorActionListener(this);
         calculateButton.setOnClickListener(this);
+    }
+
+    private void calculate() {
+        mPresenter.onCalculate(mWidthEdit.getValue(), mLengthEdit.getValue(),
+                mEraEdit.getValue());
     }
 
     private boolean verifyFields() {
@@ -71,10 +80,19 @@ public class CalculatorActivity extends AppCompatActivity implements CalculatorV
         switch (view.getId()) {
             case R.id.btn_calculate:
                 if (verifyFields()) {
-                    mPresenter.onCalculate(mWidthEdit.getValue(), mLengthEdit.getValue(),
-                            mEraEdit.getValue());
+                    calculate();
                 }
                 break;
         }
+    }
+
+    @Override
+    public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+        boolean result = false;
+        if (actionId == EditorInfo.IME_ACTION_DONE) {
+            calculate();
+            result = true;
+        }
+        return result;
     }
 }
