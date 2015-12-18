@@ -6,4 +6,6 @@
     <string name="calculator.label.time">Time</string>
     <string name="calculator.button.calculate">Calculate</string>
     <string name="calculator.button.result">{0} minutes</string>
+    <string name="calculator.tab.ultrasound">Ultrasound</string>
+    <string name="calculator.tab.formula2">Formula 2</string>
 </resources>
