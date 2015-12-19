@@ -9,6 +9,8 @@ import com.escodro.fysio.R;
 import com.escodro.fysio.adapter.CalculatorPagerAdapter;
 
 /**
+ * Main {@link AppCompatActivity} of the application.
+ * <p/>
  * Created by IgorEscodro on 14/11/15.
  */
 public class CalculatorActivity extends AppCompatActivity {
@@ -20,6 +22,9 @@ public class CalculatorActivity extends AppCompatActivity {
         initComponents();
     }
 
+    /**
+     * Initialize all view components.
+     */
     private void initComponents() {
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         final ViewPager viewPager = (ViewPager) findViewById(R.id.vpg_main);

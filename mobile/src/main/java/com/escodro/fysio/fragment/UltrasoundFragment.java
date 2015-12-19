@@ -20,21 +20,43 @@ import com.escodro.fysio.widget.DecimalEditText;
 import java.text.MessageFormat;
 
 /**
+ * {@link Fragment} responsible to handle the view part of the Ultrasound formula.
+ * <p/>
  * Created by IgorEscodro on 18/12/15.
  */
 public class UltrasoundFragment extends Fragment implements CalculatorView,
         View.OnClickListener, TextView.OnEditorActionListener {
 
+    /**
+     * {@link CalculatorPresenter} reference.
+     */
     private CalculatorPresenter mPresenter;
 
+    /**
+     * {@link DecimalEditText} containing the width value.
+     */
     private DecimalEditText mWidthEdit;
 
+    /**
+     * {@link DecimalEditText} containing the length value.
+     */
     private DecimalEditText mLengthEdit;
 
+    /**
+     * {@link DecimalEditText} containing the ERA radius value.
+     */
     private DecimalEditText mEraEdit;
 
+    /**
+     * {@link TextView} to show the result.
+     */
     private TextView mResultText;
 
+    /**
+     * Creates and returns new instance of {@link UltrasoundFragment}.
+     *
+     * @return new instance of {@link UltrasoundFragment}
+     */
     public static UltrasoundFragment newInstance() {
         return new UltrasoundFragment();
     }
@@ -52,6 +74,9 @@ public class UltrasoundFragment extends Fragment implements CalculatorView,
         initComponents(view);
     }
 
+    /**
+     * Initialize all view components.
+     */
     private void initComponents(View view) {
         mPresenter = new UltrasoundPresenter(this);
         mWidthEdit = (DecimalEditText) view.findViewById(R.id.edt_width);
@@ -64,11 +89,20 @@ public class UltrasoundFragment extends Fragment implements CalculatorView,
         calculateButton.setOnClickListener(this);
     }
 
+    /**
+     * Calls the {@link CalculatorPresenter} to calculate the recommended time of application of
+     * ultrasound based on the given values.
+     */
     private void calculate() {
         mPresenter.onCalculate(mWidthEdit.getValue(), mLengthEdit.getValue(),
                 mEraEdit.getValue());
     }
 
+    /**
+     * Verify if all the fields are correctly filled.
+     *
+     * @return <b>true</b> if all fields are correctly filled, <b>false</b> otherwise.
+     */
     private boolean verifyFields() {
         return !mWidthEdit.isEmpty() && !mLengthEdit.isEmpty() && !mEraEdit.isEmpty();
     }
